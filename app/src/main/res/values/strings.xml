@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Mapping</string>
+    <string name="tv1">Latitude</string>
+    <string name="tv2">Longitude</string>
 </resources>
