@@ -9,7 +9,6 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/tv1"
         android:text="@string/tv1" />
 
     <EditText
@@ -21,14 +20,13 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/tv1"
         android:text="@string/tv2" />
 
     <EditText
+        android:id="@+id/et2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="numberDecimal|numberSigned"
-        android:id="@+id/et2" />
+        android:inputType="numberDecimal|numberSigned" />
 
     <Button
         android:id="@+id/btn1"

@@ -2,4 +2,8 @@
     <string name="app_name">Mapping</string>
     <string name="tv1">Latitude</string>
     <string name="tv2">Longitude</string>
+    <string name="m1">Choose Map</string>
+    <string name="regularview">Regular View</string>
+    <string name="hikebikemapview">Hike Bike View</string>
+    <string name="selectmap">Select Map</string>
 </resources>

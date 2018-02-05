@@ -16,6 +16,10 @@ import org.osmdroid.config.Configuration;
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
 import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.MapView;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.content.Intent;
 
 public class MainActivity extends AppCompatActivity implements OnClickListener
 {
@@ -41,6 +45,22 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
         mv.getController().setCenter(new GeoPoint(50.913639,-1.411781));
         Button b = (Button)findViewById(R.id.btn1);
         b.setOnClickListener(this);
+    }
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
+        MenuInflater inflater=getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
+        return true;
+    }
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+        if(item.getItemId() == R.id.choosemap)
+        {
+            Intent intent = new Intent(this,MapChooseActivity.class);
+            startActivity(intent);
+            return true;
+        }
+        return false;
     }
     public void onClick(View view)
     {
