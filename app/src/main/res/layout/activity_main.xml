@@ -38,7 +38,7 @@
 
     <org.osmdroid.views.MapView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="343dp"
         android:enabled="true"
         android:clickable="true"
         android:id="@+id/map1"
