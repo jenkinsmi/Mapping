@@ -6,4 +6,6 @@
     <string name="regularview">Regular View</string>
     <string name="hikebikemapview">Hike Bike View</string>
     <string name="selectmap">Select Map</string>
+    <string name="p1">Preferences</string>
+    <string name="preferences">Preferences Activity</string>
 </resources>

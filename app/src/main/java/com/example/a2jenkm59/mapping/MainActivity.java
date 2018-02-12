@@ -1,5 +1,7 @@
 package com.example.a2jenkm59.mapping;
 
+import android.content.SharedPreferences;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -20,6 +22,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.content.Intent;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements OnClickListener
 {
@@ -46,6 +49,24 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
         Button b = (Button)findViewById(R.id.btn1);
         b.setOnClickListener(this);
     }
+
+    public void onStart()
+    {
+        super.onStart();
+        new AlertDialog.Builder(this).setPositiveButton("OK", null).
+                setMessage("onStart()").show();
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        double lat = Double.parseDouble ( prefs.getString("lat", "50.9") );
+        double lon = Double.parseDouble ( prefs.getString("lon", "-1.4") );
+
+    }
+
+    public void onStop()
+    {
+        super.onStop();
+        Toast.makeText(this, "onStop()", Toast.LENGTH_LONG).show();
+    }
+
     public boolean onCreateOptionsMenu(Menu menu)
     {
         MenuInflater inflater=getMenuInflater();
@@ -59,6 +80,10 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
             Intent intent = new Intent(this,MapChooseActivity.class);
             startActivity(intent);
             return true;
+        }
+        else if (item.getItemId() == R.id.preferences)
+        {
+            Intent intent = new Intent (this,PreferencesActivity.class);
         }
         return false;
     }
