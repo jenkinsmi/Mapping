@@ -8,4 +8,6 @@
     <string name="selectmap">Select Map</string>
     <string name="p1">Preferences</string>
     <string name="preferences">Preferences Activity</string>
+    <string name="a1">Set Location</string>
+    <string name="setlocation">Set Location Activity</string>
 </resources>

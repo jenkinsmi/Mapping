@@ -23,6 +23,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.content.Intent;
 import android.widget.Toast;
+import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
 
 public class MainActivity extends AppCompatActivity implements OnClickListener
 {
@@ -78,12 +79,20 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
         if(item.getItemId() == R.id.choosemap)
         {
             Intent intent = new Intent(this,MapChooseActivity.class);
-            startActivity(intent);
+            startActivityForResult(intent, 0);
             return true;
         }
         else if (item.getItemId() == R.id.preferences)
         {
             Intent intent = new Intent (this,PreferencesActivity.class);
+            startActivity(intent);
+            return true;
+        }
+        else if (item.getItemId() == R.id.setlocation)
+        {
+            Intent intent = new Intent (this,setLocationActivity.class);
+            startActivityForResult(intent, 1);
+            return true;
         }
         return false;
     }
@@ -95,6 +104,37 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
         double latitude = Double.parseDouble(lattext.getText().toString());
         double longitude = Double.parseDouble(longtext.getText().toString());
         mv.getController().setCenter(new GeoPoint(latitude,longitude));
+    }
+    protected void onActivityResult(int requestCode,int resultCode,Intent intent)
+    {
+
+        if(requestCode==0)
+        {
+
+            if (resultCode==RESULT_OK)
+            {
+                Bundle extras=intent.getExtras();
+                boolean hikebikemap = extras.getBoolean("com.example.a2jenkm59.mapping.hikebikemap");
+                if(hikebikemap==true)
+                {
+                    mv.setTileSource(TileSourceFactory.HIKEBIKEMAP);
+                }
+                else
+                {
+                    mv.setTileSource(TileSourceFactory.MAPNIK);
+                }
+            }
+        }
+        if(requestCode==1)
+        {
+            if(resultCode==RESULT_OK)
+            {
+                Bundle extras=intent.getExtras();
+                double latitude = extras.getDouble("com.example.a2jenkm59.mapping.latitude");
+                double longitude = extras.getDouble("com.example.a2jenkm59.mapping.longitude");
+                mv.getController().setCenter(new GeoPoint(latitude,longitude));
+            }
+        }
     }
 
 }

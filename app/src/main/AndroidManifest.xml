@@ -29,6 +29,10 @@
         <activity android:name=".PreferencesActivity" android:label="@string/preferences">
         </activity>
 
+        <activity android:name=".setLocationActivity" android:label="@string/setlocation">
+
+        </activity>
+
     </application>
 
 </manifest>
