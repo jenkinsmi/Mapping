@@ -5,9 +5,11 @@
     <string name="m1">Choose Map</string>
     <string name="regularview">Regular View</string>
     <string name="hikebikemapview">Hike Bike View</string>
-    <string name="selectmap">Select Map</string>
+    <string name="selectmap">Select Map Activity</string>
     <string name="p1">Preferences</string>
     <string name="preferences">Preferences Activity</string>
     <string name="a1">Set Location</string>
     <string name="setlocation">Set Location Activity</string>
+    <string name="m2">Choose Map List</string>
+    <string name="selectmaplist">Set Map List Activity</string>
 </resources>

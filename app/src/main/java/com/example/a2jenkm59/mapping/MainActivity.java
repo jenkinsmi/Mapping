@@ -94,6 +94,12 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
             startActivityForResult(intent, 1);
             return true;
         }
+        else if (item.getItemId() == R.id.choosemaplist)
+        {
+            Intent intent = new Intent (this,MapChooseListActivity.class);
+            startActivityForResult(intent, 0);
+            return true;
+        }
         return false;
     }
     public void onClick(View view)

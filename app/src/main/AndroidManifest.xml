@@ -30,7 +30,9 @@
         </activity>
 
         <activity android:name=".setLocationActivity" android:label="@string/setlocation">
+        </activity>
 
+        <activity android:name=".MapChooseListActivity" android:label="@string/selectmaplist">
         </activity>
 
     </application>
